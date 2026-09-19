@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt &amp; offert — Corpup</title>
+<meta name="description" content="Kontakta Corpup för en kostnadsfri behovsanalys av er datahall. Offertförfrågan, jour dygnet runt och kontaktuppgifter.">
+<meta name="theme-color" content="#f7f9fb">
+<link rel="canonical" href="https://www.corpup.se/kontakt.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Hoppa till innehåll</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Corpup">
+      <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="7.5" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="8" y="8" width="16" height="4.2" rx="1.4" fill="currentColor"/>
+        <rect x="8" y="13.9" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".55"/>
+        <rect x="8" y="19.8" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".25"/>
+      </svg>
+      <span class="logo__word">Corp<span>up</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Huvudmeny">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html" data-i18n="nav.home">Hem</a></li>
+        <li><a class="nav__link" href="tjanster.html" data-i18n="nav.services">Tjänster</a></li>
+        <li><a class="nav__link" href="kvalitet-sakerhet.html" data-i18n="nav.quality">Kvalitet &amp; säkerhet</a></li>
+        <li><a class="nav__link" href="om-oss.html" data-i18n="nav.about">Om oss</a></li>
+        <li><a class="nav__link" href="kontakt.html" aria-current="page" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Språk / Language">
+        <button type="button" data-lang="sv" aria-pressed="true">SV</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm" href="#offert" data-i18n="cta.quote">Begär offert</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+        <span></span><span class="visually-hidden" data-i18n="a11y.menu">Meny</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="pagehero">
+  <div class="wrap">
+    <ol class="breadcrumb">
+      <li><a href="index.html" data-i18n="nav.home">Hem</a></li>
+      <li data-i18n="nav.contact">Kontakt</li>
+    </ol>
+    <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+    <h1 data-i18n="contact.h1">Berätta om er anläggning</h1>
+    <p class="lead" data-i18n="contact.lead">
+      Skicka en förfrågan så återkommer vi inom en arbetsdag. Behöver ni hjälp akut —
+      ring jourtelefonen, den är bemannad dygnet runt året om.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="offert">
+  <div class="wrap contact-grid">
+
+    <!-- FORM -->
+    <div class="reveal">
+      <h2 data-i18n="contact.form.h2">Offertförfrågan</h2>
+      <p class="lead" style="margin-bottom:2rem" data-i18n="contact.form.lead">
+        Ju mer ni fyller i, desto träffsäkrare blir vårt första svar. Inget är obligatoriskt
+        utöver kontaktuppgifterna.
+      </p>
+
+      <form id="quote-form" class="form-grid" novalidate>
+        <div class="form-grid form-grid--2 field--full" style="gap:1.15rem">
+          <div class="field">
+            <label for="name" data-i18n="form.name">Namn *</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="company" data-i18n="form.company">Företag</label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="form.email">E-post *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone" data-i18n="form.phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field field--full">
+          <label for="facility" data-i18n="form.facility">Typ av anläggning</label>
+          <select id="facility" name="facility">
+            <option value="" data-i18n="form.choose">Välj…</option>
+            <option data-i18n="form.f1">Datahall / whitespace</option>
+            <option data-i18n="form.f2">Serverrum</option>
+            <option data-i18n="form.f3">Colocation-anläggning</option>
+            <option data-i18n="form.f4">Korskopplings- eller nod-rum</option>
+            <option data-i18n="form.f5">UPS- och batterirum</option>
+            <option data-i18n="form.f6">Nybyggnation / ombyggnation</option>
+            <option data-i18n="form.f7">Annat</option>
+          </select>
+        </div>
+
+        <div class="field field--full">
+          <label for="need" data-i18n="form.need">Vad gäller det?</label>
+          <select id="need" name="need">
+            <option value="" data-i18n="form.choose">Välj…</option>
+            <option data-i18n="form.n1">Löpande underhållsstädning</option>
+            <option data-i18n="form.n2">Engångs djuprengöring</option>
+            <option data-i18n="form.n3">Städning under datorgolv</option>
+            <option data-i18n="form.n4">ESD-golvvård</option>
+            <option data-i18n="form.n5">Byggstädning / driftsättning</option>
+            <option data-i18n="form.n6">Partikelmätning</option>
+            <option data-i18n="form.n7">Akut — jour</option>
+          </select>
+        </div>
+
+        <div class="field field--full">
+          <label for="message" data-i18n="form.message">Meddelande</label>
+          <textarea id="message" name="message" data-i18n-attr="placeholder:form.placeholder"
+            placeholder="Kvadratmeter, antal rack, ort, önskade tidsfönster, särskilda säkerhetskrav…"></textarea>
+        </div>
+
+        <!-- honeypot -->
+        <div class="visually-hidden" aria-hidden="true">
+          <label for="company_url">Lämna tomt</label>
+          <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field--full">
+          <button class="btn btn--primary" type="submit" data-i18n="form.submit">Skicka förfrågan</button>
+          <p class="form-note" style="margin-top:1rem" data-i18n="form.note">
+            Vi använder uppgifterna enbart för att besvara din förfrågan och delar dem aldrig vidare.
+          </p>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </div>
+
+    <!-- DETAILS -->
+    <aside class="reveal">
+      <h2 data-i18n="contact.details.h2">Kontaktuppgifter</h2>
+      <ul class="contact-list" style="margin-top:1.5rem">
+        <li>
+          <span class="k" data-i18n="contact.k.phone">Växel</span>
+          <span class="v"><a href="tel:+4680000000">08-000 00 00</a></span>
+        </li>
+        <li>
+          <span class="k" data-i18n="contact.k.jour">Jour, dygnet runt</span>
+          <span class="v"><a href="tel:+4680000001">08-000 00 01</a></span>
+        </li>
+        <li>
+          <span class="k" data-i18n="contact.k.email">E-post</span>
+          <span class="v"><a href="mailto:info@corpup.se">info@corpup.se</a></span>
+        </li>
+        <li>
+          <span class="k" data-i18n="contact.k.quote">Offertförfrågan</span>
+          <span class="v"><a href="mailto:offert@corpup.se">offert@corpup.se</a></span>
+        </li>
+        <li>
+          <span class="k" data-i18n="contact.k.address">Besöksadress</span>
+          <span class="v" data-i18n="contact.v.address">Exempelgatan 12<br>111 22 Stockholm</span>
+        </li>
+        <li>
+          <span class="k" data-i18n="contact.k.hours">Öppettider</span>
+          <span class="v" data-i18n="contact.v.hours">Mån–fre 07.00–17.00<br>Jour övrig tid</span>
+        </li>
+      </ul>
+
+      <div class="callout" style="margin-top:2rem">
+        <h3 data-i18n="contact.urgent.h">Akut läge just nu?</h3>
+        <p data-i18n="contact.urgent.p">
+          Vid byggdamm som spridits, sotpartiklar, vattenläckage eller batterihaveri —
+          ring jouren direkt på 08-000 00 01. Skicka inte formulär.
+        </p>
+      </div>
+
+      <div class="callout" style="margin-top:1rem">
+        <h3 data-i18n="contact.docs.h">Behöver ni underlag?</h3>
+        <p data-i18n="contact.docs.p">
+          Certifikat, försäkringsbevis och exempel på slutrapport skickas på begäran
+          inför avtalsstart.
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section band section--tight">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow" data-i18n="contact.next.eyebrow">Nästa steg</p>
+        <h2 data-i18n="contact.next.h2">Vad som händer efter att ni hör av er</h2>
+      </div>
+      <div class="reveal">
+        <ul class="checks">
+          <li data-i18n="contact.next.l1">Vi svarar inom en arbetsdag och ställer några kompletterande frågor.</li>
+          <li data-i18n="contact.next.l2">Vi bokar in ett platsbesök i er anläggning, kostnadsfritt och utan bindning.</li>
+          <li data-i18n="contact.next.l3">Ni får en skriftlig åtgärdsplan med metod, tidsfönster, bemanning och pris.</li>
+          <li data-i18n="contact.next.l4">Vid avtal tar vi fram rutinbeskrivning och tillträdesunderlag innan första passet.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="logo" href="index.html" aria-label="Corpup">
+          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="7.5" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="8" y="8" width="16" height="4.2" rx="1.4" fill="currentColor"/>
+            <rect x="8" y="13.9" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".55"/>
+            <rect x="8" y="19.8" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".25"/>
+          </svg>
+          <span class="logo__word">Corp<span>up</span></span>
+        </a>
+        <p class="footer-blurb" data-i18n="footer.blurb">
+          Specialiserad städning och teknisk rengöring av datacenter, datahallar och
+          serverhallar. Vi håller driftkritiska miljöer rena — utan driftstopp.
+        </p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.h.nav">Meny</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Hem</a></li>
+          <li><a href="tjanster.html" data-i18n="nav.services">Tjänster</a></li>
+          <li><a href="kvalitet-sakerhet.html" data-i18n="nav.quality">Kvalitet &amp; säkerhet</a></li>
+          <li><a href="om-oss.html" data-i18n="nav.about">Om oss</a></li>
+          <li><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.h.services">Tjänster</h4>
+        <ul>
+          <li><a href="tjanster.html#teknisk-stadning" data-i18n="footer.s1">Teknisk städning</a></li>
+          <li><a href="tjanster.html#undergolv" data-i18n="footer.s2">Under datorgolv</a></li>
+          <li><a href="tjanster.html#golvvard" data-i18n="footer.s3">ESD-golvvård</a></li>
+          <li><a href="tjanster.html#byggstadning" data-i18n="footer.s4">Byggstädning</a></li>
+          <li><a href="tjanster.html#jour" data-i18n="footer.s5">Jour 24/7</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.h.contact">Kontakt</h4>
+        <ul>
+          <li><a href="mailto:info@corpup.se">info@corpup.se</a></li>
+          <li><a href="tel:+4680000000">08-000 00 00</a></li>
+          <li><a href="tel:+4680000001"><span data-i18n="footer.jour">Jour</span>: 08-000 00 01</a></li>
+          <li data-i18n="footer.address">Stockholm, Sverige</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Corpup AB. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></span>
+      <span data-i18n="footer.orgnr">Org.nr 559XXX-XXXX · Godkänd för F-skatt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/media.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
