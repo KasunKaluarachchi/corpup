@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Corpup — language switch (SV default, EN overlay)
+   CoreUp — language switch (SV default, EN overlay)
    --------------------------------------------------------------------------
    Swedish lives in the HTML itself, so the pages are fully readable and
    indexable without JavaScript. This file holds ONLY the English strings.
@@ -12,7 +12,7 @@
      data-i18n-attr="placeholder:form.placeholder, aria-label:some.key"
    ========================================================================== */
 
-window.CORPUP_EN = {
+window.COREUP_EN = {
   /* ---------- Shared chrome ---------- */
   "a11y.skip": "Skip to content",
   "a11y.menu": "Menu",
@@ -69,7 +69,7 @@ window.CORPUP_EN = {
   /* ---------- Home ---------- */
   "home.hero.eyebrow": "Specialist data centre cleaning",
   "home.hero.h1": "Cleaning of data centres, data halls and server rooms.",
-  "home.hero.lead": "Corpup carries out technical cleaning in mission-critical environments — beneath raised floors, inside racks and on every surface where dust becomes an operational risk. We work under full load, with ESD-safe methods and staff trained to ISO 45001.",
+  "home.hero.lead": "CoreUp carries out technical cleaning in mission-critical environments — beneath raised floors, inside racks and on every surface where dust becomes an operational risk. We work under full load, with ESD-safe methods and staff trained to ISO 45001.",
   "home.hero.cta1": "Book a free site assessment",
   "home.hero.cta2": "See our services",
 
@@ -256,13 +256,13 @@ window.CORPUP_EN = {
   "q.cta.btn": "Request documentation",
 
   /* ---------- About ---------- */
-  "about.eyebrow": "About Corpup",
+  "about.eyebrow": "About CoreUp",
   "about.h1": "A cleaning company that only does data halls",
   "about.lead": "Most cleaning companies treat the data hall as an add-on to the office contract. We did the opposite and built the whole business around it. That shows in method, in equipment and above all in who is actually standing in the hall.",
 
   "about.story.eyebrow": "The background",
   "about.story.h2": "Specialisation over breadth",
-  "about.story.p1": "Corpup started from a simple observation: operations teams pour resources into redundancy, cooling and monitoring — and then leave the cleaning to a supplier with no training for the environment. Dust, static electricity and particles in the airflow are operational issues, but are rarely treated as such.",
+  "about.story.p1": "CoreUp started from a simple observation: operations teams pour resources into redundancy, cooling and monitoring — and then leave the cleaning to a supplier with no training for the environment. Dust, static electricity and particles in the airflow are operational issues, but are rarely treated as such.",
   "about.story.p2": "We decided to do one thing, and do it properly. Every piece of equipment we buy is chosen for the data hall environment. All staff are trained for it. Every routine is written for it. We are happy to take the office areas and reception on the same contract — but it is the hall that sets how we work.",
   "about.story.p3": "We are based in Stockholm and work throughout Sweden, with recurring assignments for colocation operators, banks, the public sector and telecom.",
 

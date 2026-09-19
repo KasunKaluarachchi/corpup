@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Corpup — interactive media
+   CoreUp — interactive media
    Hero background video · before/after compare slider · lightbox gallery
    --------------------------------------------------------------------------
    Every component here is a progressive no-op: if the markup for a feature

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.corpup.se/sitemap.xml
+Sitemap: https://www.coreup.se/sitemap.xml

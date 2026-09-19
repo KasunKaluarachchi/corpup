@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Corpup — site behaviour
+   CoreUp — site behaviour
    Language switch · mobile navigation · scroll reveal · quote form
    ========================================================================== */
 
@@ -8,33 +8,33 @@
 
   /* ---------------------------------------------------------------------
      1. Language switch
-     Swedish is the markup default; English comes from window.CORPUP_EN.
+     Swedish is the markup default; English comes from window.COREUP_EN.
      --------------------------------------------------------------------- */
 
-  var EN = window.CORPUP_EN || {};
-  var STORAGE_KEY = "corpup-lang";
+  var EN = window.COREUP_EN || {};
+  var STORAGE_KEY = "coreup-lang";
 
   /* Page titles per language, keyed by file name. */
   var TITLES = {
     "index.html": {
-      title: "Corpup — Data centre, data hall and server room cleaning",
-      desc: "Corpup specialises in technical cleaning of data centres, data halls and server rooms. ISO 45001 working environment, ESD-safe methods and HEPA-filtered equipment — without downtime."
+      title: "CoreUp — Data centre, data hall and server room cleaning",
+      desc: "CoreUp specialises in technical cleaning of data centres, data halls and server rooms. ISO 45001 working environment, ESD-safe methods and HEPA-filtered equipment — without downtime."
     },
     "tjanster.html": {
-      title: "Services — Technical data hall cleaning | Corpup",
-      desc: "Corpup services: technical data hall cleaning, cleaning beneath raised floors, ESD floor care, construction cleaning, particle measurement to ISO 14644-1, cooling unit cleaning and 24/7 call-out."
+      title: "Services — Technical data hall cleaning | CoreUp",
+      desc: "CoreUp services: technical data hall cleaning, cleaning beneath raised floors, ESD floor care, construction cleaning, particle measurement to ISO 14644-1, cooling unit cleaning and 24/7 call-out."
     },
     "kvalitet-sakerhet.html": {
-      title: "Quality & safety — ISO 45001 | Corpup",
-      desc: "Corpup staff work to ISO 45001. Read about our health and safety work, ISO 14644-1 methodology, ESD-safe materials, HEPA filtration, confidentiality and documentation."
+      title: "Quality & safety — ISO 45001 | CoreUp",
+      desc: "CoreUp staff work to ISO 45001. Read about our health and safety work, ISO 14644-1 methodology, ESD-safe materials, HEPA filtration, confidentiality and documentation."
     },
     "om-oss.html": {
-      title: "About us — Corpup",
-      desc: "Corpup is a Swedish cleaning company dedicated entirely to data centres, data halls and server rooms. Read about who we are and how we work."
+      title: "About us — CoreUp",
+      desc: "CoreUp is a Swedish cleaning company dedicated entirely to data centres, data halls and server rooms. Read about who we are and how we work."
     },
     "kontakt.html": {
-      title: "Contact & quotes — Corpup",
-      desc: "Contact Corpup for a free assessment of your data hall. Quote requests, 24/7 emergency line and contact details."
+      title: "Contact & quotes — CoreUp",
+      desc: "Contact CoreUp for a free assessment of your data hall. Quote requests, 24/7 emergency line and contact details."
     }
   };
 
@@ -322,7 +322,7 @@
      --------------------------------------------------------------------- */
 
   var FORM_ENDPOINT = "";           // e.g. "https://formspree.io/f/xxxxxxx"
-  var FORM_MAILTO   = "offert@corpup.se";
+  var FORM_MAILTO   = "offert@coreup.se";
 
   function initForm() {
     var form = document.getElementById("quote-form");
@@ -377,10 +377,10 @@
       var labels = lang() === "en"
         ? { name: "Name", company: "Company", email: "Email", phone: "Phone",
             facility: "Facility", need: "Enquiry", message: "Message",
-            subject: "Quote request — Corpup" }
+            subject: "Quote request — CoreUp" }
         : { name: "Namn", company: "Företag", email: "E-post", phone: "Telefon",
             facility: "Anläggning", need: "Ärende", message: "Meddelande",
-            subject: "Offertförfrågan — Corpup" };
+            subject: "Offertförfrågan — CoreUp" };
 
       var body = Object.keys(labels)
         .filter(function (k) { return k !== "subject" && data[k]; })

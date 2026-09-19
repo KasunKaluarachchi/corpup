@@ -4,7 +4,7 @@ No real photos or video exist yet. The before/after slider and the photo
 gallery instead show small hand-drawn line illustrations (matching the
 homepage's rack diagram style), each tagged with a visible "Exempelbild" /
 "Sample illustration" badge — **these are placeholders, not real photos or
-video of Corpup's facilities or work**, and must be replaced before launch.
+video of CoreUp's facilities or work**, and must be replaced before launch.
 The hero video has no illustration equivalent (a `<video>` element needs an
 actual video file) and simply stays on the current static light hero until
 one is added. Drop a real file at the exact path below and the

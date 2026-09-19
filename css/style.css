@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Corpup — Datacenterstädning
+   CoreUp — Datacenterstädning
    Design system + components. No build step, no dependencies.
    ========================================================================== */
 
@@ -50,7 +50,7 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Dark mode intentionally omitted — Corpup always renders in the light
+/* Dark mode intentionally omitted — CoreUp always renders in the light
    palette defined in :root above, regardless of OS/browser preference. */
 
 /* ---------- 2. Reset ----------------------------------------------------- */
@@ -901,7 +901,7 @@ a.card:hover .card__foot svg { transform: translateX(4px); }
 /* Illustrated placeholders — used until a real photo exists at the given
    path. These replace the plain hatch pattern with a small custom line
    illustration, always paired with an explicit "sample image" badge so it
-   is never mistaken for real photography of Corpup's work. */
+   is never mistaken for real photography of CoreUp's work. */
 .media-slot__illustration { display: none; position: absolute; inset: 0; }
 .media-slot.is-missing .media-slot__illustration { display: block; }
 .media-slot--illustrated.is-missing::before,

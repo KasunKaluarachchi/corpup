@@ -1,6 +1,6 @@
-# Corpup — website
+# CoreUp — website
 
-Static, dependency-free website for **Corpup**, a specialist data centre cleaning company.
+Static, dependency-free website for **CoreUp**, a specialist data centre cleaning company.
 Swedish is the default language with an English toggle in the header.
 
 ## Structure
@@ -81,7 +81,7 @@ Until real files exist at the documented paths, the before/after slider and
 the 6 gallery items show a small hand-drawn line illustration instead of a
 real photo, each tagged with a visible "Exempelbild" / "Sample illustration"
 badge — **these are
-placeholders, not real photos of Corpup's facilities or work**, and must be
+placeholders, not real photos of CoreUp's facilities or work**, and must be
 swapped for real files before launch. Any slot without a custom
 illustration falls back to a plain diagonal-hatch pattern naming the exact
 path it's waiting for. Drop a real file in at that path and the
@@ -95,10 +95,10 @@ These are stand-ins and must be updated with the real details:
 |---|---|
 | All pages, header/footer/contact | `08-000 00 00` (switchboard) |
 | All pages | `08-000 00 01` (emergency line) |
-| All pages | `info@corpup.se`, `offert@corpup.se` |
+| All pages | `info@coreup.se`, `offert@coreup.se` |
 | `kontakt.html` | Visiting address `Exempelgatan 12, 111 22 Stockholm` |
 | All pages, footer | `Org.nr 559XXX-XXXX` |
-| `<head>` canonical + `sitemap.xml` + `robots.txt` | `https://www.corpup.se/` |
+| `<head>` canonical + `sitemap.xml` + `robots.txt` | `https://www.coreup.se/` |
 | `index.html` | JSON-LD block (`ProfessionalService`) — phone, email, URL |
 
 Search for `000 00 00` and `559XXX` to find them all quickly.
@@ -106,7 +106,7 @@ Search for `000 00 00` and `559XXX` to find them all quickly.
 Claims that should be verified against actual certification before publishing:
 ISO 45001, and the references to ISO 9001 / ISO 14001 on `kvalitet-sakerhet.html`
 (currently worded as *standards we work to*, not as held certificates — tighten or
-strengthen that wording depending on what Corpup is actually certified for).
+strengthen that wording depending on what CoreUp is actually certified for).
 
 ## Design
 
