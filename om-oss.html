@@ -19,13 +19,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="index.html" aria-label="CoreUp">
-      <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="7.5" stroke="currentColor" stroke-width="1.5"/>
-        <rect x="8" y="8" width="16" height="4.2" rx="1.4" fill="currentColor"/>
-        <rect x="8" y="13.9" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".55"/>
-        <rect x="8" y="19.8" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".25"/>
-      </svg>
-      <span class="logo__word">Core<span>Up</span></span>
+      <img class="logo__img" src="assets/logo.png" alt="CoreUp — datacenterstädning" width="150" height="90">
     </a>
     <nav class="nav" id="nav" aria-label="Huvudmeny">
       <ul class="nav__list">
@@ -113,14 +107,43 @@
   </div>
 </section>
 
+<!-- ================= VISION & MISSION ================= -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="about.vm.eyebrow">Vision &amp; mission</p>
+      <h2 data-i18n="about.vm.h2">Vad vi siktar mot</h2>
+    </div>
+    <div class="grid grid--2">
+      <div class="card reveal">
+        <h3 data-i18n="about.vm.visionH">Vision</h3>
+        <p data-i18n="about.vm.visionP">
+          Att bli en pålitlig leverantör av säker, högkvalitativ och tillförlitlig
+          städning för datacenter samt tekniska och industriella miljöer i Sverige —
+          känd för professionalism, konsekvens, kundförtroende och ett engagemang
+          för ständig förbättring.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="about.vm.missionH">Mission</h3>
+        <p data-i18n="about.vm.missionP">
+          Att skydda kritisk infrastruktur och stödja våra kunder genom kompetent
+          personal, kontrollerade städmetoder, rätt utrustning, tydlig
+          kommunikation, dokumenterad kvalitetskontroll och ständig förbättring.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="stats" aria-label="Om verksamheten">
   <div class="stat">
     <span class="stat__value" data-i18n="about.stat1v">Endast</span>
     <span class="stat__label" data-i18n="about.stat1">Datacenter och driftkritiska miljöer — ingen annan nisch</span>
   </div>
   <div class="stat">
-    <span class="stat__value">ISO 45001</span>
-    <span class="stat__label" data-i18n="about.stat2">Arbetsmiljöstandarden som all vår personal arbetar enligt</span>
+    <span class="stat__value">DCCS</span>
+    <span class="stat__label" data-i18n="about.stat2">Capitoline-certifiering som vår tekniska personal håller</span>
   </div>
   <div class="stat">
     <span class="stat__value" data-i18n="about.stat3v">Hela Sverige</span>
@@ -161,10 +184,11 @@
       <p class="eyebrow" data-i18n="about.team.eyebrow">Teamet</p>
       <h2 data-i18n="about.team.h2">Personer, inte bemanning</h2>
       <p data-i18n="about.team.p">
-        Våra medarbetare är anställda hos oss, arbetar enligt kollektivavtal och genomgår
-        intern utbildning innan de sätts i en datahall. Introduktionen sker alltid på plats
-        tillsammans med en erfaren kollega, och ingen arbetar ensam i en ny anläggning.
-        På återkommande uppdrag arbetar vi med namngivet team, vilket gör er
+        Våra medarbetare är anställda hos oss och genomgår en strukturerad utbildning i tre
+        steg innan de arbetar självständigt: introduktion i policyer, säkerhet och regelverk,
+        praktisk fältträning under en Capitoline-certifierad arbetsledare, och återkommande
+        repetitionsutbildning. Ingen arbetar självständigt i en datahall förrän kompetensen
+        är verifierad. På återkommande uppdrag arbetar vi med namngivet team, vilket gör er
         tillträdeshantering enklare och kvaliteten mer förutsägbar.
       </p>
       <div class="btn-row">
@@ -189,15 +213,15 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow" data-i18n="gallery.eyebrow">Bilder</p>
-      <h2 data-i18n="gallery.h2">Från våra uppdrag</h2>
-      <p class="lead" data-i18n="gallery.lead">Ett urval bilder från insatser i datahallar och serverrum. Klicka för att förstora.</p>
+      <h2 data-i18n="gallery.h2">Exempel på hur vi arbetar</h2>
+      <p class="lead" data-i18n="gallery.lead">Exempelbilder som visar metoder och moment vi arbetar med i datahallar och serverrum. Klicka för att förstora.</p>
     </div>
 
     <div class="gallery" data-gallery>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="Djuprengöring av rackskåp i datahall" data-i18n-attr="data-caption:gallery.1">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-1.jpg">
+              data-caption="Exempel: djuprengöring av rackskåp i datahall" data-i18n-attr="data-caption:gallery.1">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/rack-deep-cleaning-hepa.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <line x1="60" y1="240" x2="340" y2="240" stroke="#e3e8ee" stroke-width="2"/>
@@ -205,14 +229,14 @@
               <g fill="#e3e8ee">
                 <rect x="192" y="74" width="86" height="12" rx="2"/>
                 <rect x="192" y="94" width="86" height="12" rx="2"/>
-                <rect x="192" y="114" width="86" height="12" rx="2" fill="#00a3b5" opacity="0.85"/>
+                <rect x="192" y="114" width="86" height="12" rx="2" fill="#237da7" opacity="0.85"/>
                 <rect x="192" y="134" width="86" height="12" rx="2"/>
                 <rect x="192" y="154" width="86" height="12" rx="2"/>
-                <rect x="192" y="174" width="86" height="12" rx="2" fill="#00a3b5" opacity="0.45"/>
+                <rect x="192" y="174" width="86" height="12" rx="2" fill="#237da7" opacity="0.45"/>
                 <rect x="192" y="194" width="86" height="12" rx="2"/>
               </g>
-              <rect x="88" y="132" width="44" height="34" rx="14" fill="#00a3b5" opacity="0.85"/>
-              <path d="M78 128q-10 8 -2 18" stroke="#00a3b5" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <rect x="88" y="132" width="44" height="34" rx="14" fill="#237da7" opacity="0.85"/>
+              <path d="M78 128q-10 8 -2 18" stroke="#237da7" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
               <g fill="#0b1220" opacity="0.3">
                 <circle cx="142" cy="120" r="2.5"/>
                 <circle cx="156" cy="104" r="2"/>
@@ -221,15 +245,15 @@
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-1.jpg" alt="Djuprengöring av rackskåp i datahall"
+          <img src="assets/gallery/rack-deep-cleaning-hepa.jpg" alt="Exempel: djuprengöring av rackskåp i datahall"
                data-i18n-attr="alt:gallery.1" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
       </button>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="Rengöring under datorgolv" data-i18n-attr="data-caption:gallery.2">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-2.jpg">
+              data-caption="Exempel: rengöring under datorgolv" data-i18n-attr="data-caption:gallery.2">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/raised-floor-cable-cleaning.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <line x1="50" y1="190" x2="350" y2="190" stroke="#e3e8ee" stroke-width="2"/>
@@ -239,21 +263,21 @@
               <rect x="170" y="163" width="60" height="20" rx="3" fill="#f7f9fb" stroke="#0b1220" stroke-width="2"/>
               <line x1="185" y1="192" x2="185" y2="233" stroke="#0b1220" stroke-width="2" opacity="0.6"/>
               <line x1="205" y1="192" x2="205" y2="233" stroke="#0b1220" stroke-width="2" opacity="0.6"/>
-              <path d="M60 250q40 -14 80 0t80 0t80 0" stroke="#00a3b5" stroke-width="2.5" fill="none" opacity="0.7"/>
+              <path d="M60 250q40 -14 80 0t80 0t80 0" stroke="#237da7" stroke-width="2.5" fill="none" opacity="0.7"/>
               <line x1="248" y1="118" x2="205" y2="176" stroke="#0b1220" stroke-width="3"/>
-              <rect x="196" y="172" width="20" height="10" rx="3" fill="#00a3b5"/>
+              <rect x="196" y="172" width="20" height="10" rx="3" fill="#237da7"/>
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-2.jpg" alt="Rengöring under datorgolv"
+          <img src="assets/gallery/raised-floor-cable-cleaning.jpg" alt="Exempel: rengöring under datorgolv"
                data-i18n-attr="alt:gallery.2" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
       </button>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="ESD-golvvård och polering" data-i18n-attr="data-caption:gallery.3">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-3.jpg">
+              data-caption="Exempel: ESD-golvvård och polering" data-i18n-attr="data-caption:gallery.3">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/esd-floor-care-polishing.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <g stroke="#e3e8ee" stroke-width="1.5" opacity="0.8">
@@ -268,31 +292,31 @@
                 <line x1="270" y1="170" x2="270" y2="260"/>
                 <line x1="310" y1="170" x2="310" y2="260"/>
               </g>
-              <circle cx="200" cy="215" r="26" fill="#00a3b5" opacity="0.18" stroke="#00a3b5" stroke-width="2"/>
+              <circle cx="200" cy="215" r="26" fill="#237da7" opacity="0.18" stroke="#237da7" stroke-width="2"/>
               <line x1="200" y1="190" x2="200" y2="110" stroke="#0b1220" stroke-width="3"/>
               <rect x="188" y="96" width="24" height="16" rx="4" fill="#0b1220" opacity="0.85"/>
-              <circle cx="200" cy="215" r="40" fill="none" stroke="#00a3b5" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.5"/>
-              <circle cx="200" cy="215" r="54" fill="none" stroke="#00a3b5" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3"/>
+              <circle cx="200" cy="215" r="40" fill="none" stroke="#237da7" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.5"/>
+              <circle cx="200" cy="215" r="54" fill="none" stroke="#237da7" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3"/>
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-3.jpg" alt="ESD-golvvård och polering"
+          <img src="assets/gallery/esd-floor-care-polishing.jpg" alt="Exempel: ESD-golvvård och polering"
                data-i18n-attr="alt:gallery.3" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
       </button>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="Partikelmätning med räknare" data-i18n-attr="data-caption:gallery.4">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-4.jpg">
+              data-caption="Exempel: partikelmätning med räknare" data-i18n-attr="data-caption:gallery.4">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/particle-measurement-cleanroom.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <circle cx="200" cy="150" r="70" fill="none" stroke="#00a3b5" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.35"/>
+              <circle cx="200" cy="150" r="70" fill="none" stroke="#237da7" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.35"/>
               <rect x="170" y="90" width="60" height="110" rx="10" fill="#ffffff" stroke="#0b1220" stroke-width="2.5"/>
-              <rect x="180" y="104" width="40" height="30" rx="4" fill="#e5f6f8" stroke="#00a3b5" stroke-width="1.5"/>
-              <line x1="186" y1="114" x2="214" y2="114" stroke="#00a3b5" stroke-width="2"/>
-              <line x1="186" y1="122" x2="206" y2="122" stroke="#00a3b5" stroke-width="2"/>
-              <circle cx="200" cy="150" r="4" fill="#00a3b5"/>
+              <rect x="180" y="104" width="40" height="30" rx="4" fill="#e7f3f8" stroke="#237da7" stroke-width="1.5"/>
+              <line x1="186" y1="114" x2="214" y2="114" stroke="#237da7" stroke-width="2"/>
+              <line x1="186" y1="122" x2="206" y2="122" stroke="#237da7" stroke-width="2"/>
+              <circle cx="200" cy="150" r="4" fill="#237da7"/>
               <circle cx="188" cy="172" r="4" fill="#e3e8ee"/>
               <circle cx="212" cy="172" r="4" fill="#e3e8ee"/>
               <g fill="#0b1220">
@@ -305,15 +329,15 @@
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-4.jpg" alt="Partikelmätning med räknare"
+          <img src="assets/gallery/particle-measurement-cleanroom.jpg" alt="Exempel: partikelmätning med räknare"
                data-i18n-attr="alt:gallery.4" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
       </button>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="Byggstädning inför driftsättning" data-i18n-attr="data-caption:gallery.5">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-5.jpg">
+              data-caption="Exempel: byggstädning inför driftsättning" data-i18n-attr="data-caption:gallery.5">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/construction-phase-cleaning.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <rect x="40" y="50" width="320" height="180" rx="12" fill="none" stroke="#e3e8ee" stroke-width="2" opacity="0.9"/>
@@ -329,19 +353,19 @@
                 <line x1="95" y1="215" x2="95" y2="228"/>
                 <line x1="95" y1="215" x2="105" y2="225"/>
               </g>
-              <path d="M270 210l40 0l-8 20l-24 0z" fill="#e5f6f8" stroke="#00a3b5" stroke-width="2"/>
+              <path d="M270 210l40 0l-8 20l-24 0z" fill="#e7f3f8" stroke="#237da7" stroke-width="2"/>
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-5.jpg" alt="Byggstädning inför driftsättning"
+          <img src="assets/gallery/construction-phase-cleaning.jpg" alt="Exempel: byggstädning inför driftsättning"
                data-i18n-attr="alt:gallery.5" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
       </button>
 
       <button class="gallery__item reveal" type="button"
-              data-caption="Team i skyddsutrustning i serverrum" data-i18n-attr="data-caption:gallery.6">
-        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/photo-6.jpg">
+              data-caption="Exempel: team i skyddsutrustning i serverrum" data-i18n-attr="data-caption:gallery.6">
+        <span class="media-slot media-slot--illustrated" data-label="assets/gallery/coreup-team-portrait.jpg">
           <span class="media-slot__illustration">
             <svg class="media-slot__art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <line x1="50" y1="235" x2="350" y2="235" stroke="#e3e8ee" stroke-width="2"/>
@@ -359,12 +383,12 @@
               </g>
               <circle cx="170" cy="140" r="16" fill="#0b1220" opacity="0.85"/>
               <rect x="150" y="158" width="40" height="75" rx="14" fill="#0b1220" opacity="0.85"/>
-              <circle cx="230" cy="148" r="15" fill="#00a3b5" opacity="0.9"/>
-              <rect x="211" y="165" width="38" height="68" rx="13" fill="#00a3b5" opacity="0.9"/>
+              <circle cx="230" cy="148" r="15" fill="#237da7" opacity="0.9"/>
+              <rect x="211" y="165" width="38" height="68" rx="13" fill="#237da7" opacity="0.9"/>
             </svg>
             <span class="media-slot__badge" data-i18n="media.sample">Exempelbild</span>
           </span>
-          <img src="assets/gallery/photo-6.jpg" alt="Team i skyddsutrustning i serverrum"
+          <img src="assets/gallery/coreup-team-portrait.jpg" alt="Exempel: team i skyddsutrustning i serverrum"
                data-i18n-attr="alt:gallery.6" loading="lazy" onerror="markMediaMissing(this)">
         </span>
         <span class="gallery__zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg></span>
@@ -416,13 +440,7 @@
     <div class="footer-top">
       <div>
         <a class="logo" href="index.html" aria-label="CoreUp">
-          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="7.5" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="8" y="8" width="16" height="4.2" rx="1.4" fill="currentColor"/>
-            <rect x="8" y="13.9" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".55"/>
-            <rect x="8" y="19.8" width="16" height="4.2" rx="1.4" fill="currentColor" opacity=".25"/>
-          </svg>
-          <span class="logo__word">Core<span>Up</span></span>
+          <img class="logo__img" src="assets/logo.png" alt="CoreUp — datacenterstädning" width="150" height="90">
         </a>
         <p class="footer-blurb" data-i18n="footer.blurb">
           Specialiserad städning och teknisk rengöring av datacenter, datahallar och
@@ -460,7 +478,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year">2026</span> CoreUp AB. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></span>
+      <span>© <span id="year">2026</span> CoreUp Sweden AB. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></span>
       <span data-i18n="footer.orgnr">Org.nr 559XXX-XXXX · Godkänd för F-skatt</span>
     </div>
   </div>

@@ -18,15 +18,15 @@
   var TITLES = {
     "index.html": {
       title: "CoreUp — Data centre, data hall and server room cleaning",
-      desc: "CoreUp specialises in technical cleaning of data centres, data halls and server rooms. ISO 45001 working environment, ESD-safe methods and HEPA-filtered equipment — without downtime."
+      desc: "CoreUp specialises in technical cleaning of data centres, data halls and server rooms. Capitoline-certified staff, ESD-safe methods and HEPA-filtered equipment — without downtime."
     },
     "tjanster.html": {
       title: "Services — Technical data hall cleaning | CoreUp",
       desc: "CoreUp services: technical data hall cleaning, cleaning beneath raised floors, ESD floor care, construction cleaning, particle measurement to ISO 14644-1, cooling unit cleaning and 24/7 call-out."
     },
     "kvalitet-sakerhet.html": {
-      title: "Quality & safety — ISO 45001 | CoreUp",
-      desc: "CoreUp staff work to ISO 45001. Read about our health and safety work, ISO 14644-1 methodology, ESD-safe materials, HEPA filtration, confidentiality and documentation."
+      title: "Quality & safety — Capitoline certification | CoreUp",
+      desc: "CoreUp staff are Capitoline-certified (DCCS). Read about our DCSC certification application, ISO 14644-1 methodology, ESD-safe materials, HEPA filtration, confidentiality and documentation."
     },
     "om-oss.html": {
       title: "About us — CoreUp",
@@ -110,7 +110,7 @@
     var fromUrl = new URLSearchParams(window.location.search).get("lang");
     var lang = (fromUrl === "en" || fromUrl === "sv") ? fromUrl
              : (stored === "en" || stored === "sv") ? stored
-             : "sv";
+             : "en"; // default language for first-time visitors (no stored/URL choice)
 
     if (lang === "en") applyLang("en");
     else applyLang("sv");
@@ -201,7 +201,7 @@
      3b. Animated stat counters
      Counts up any .stat__value whose text is a plain integer or ends in
      "%" (e.g. "100 %") once it scrolls into view. Non-numeric values
-     (24/7, H14, ISO 45001, Hela Sverige…) are left untouched — this only
+     (24/7, H14, DCCS, Hela Sverige…) are left untouched — this only
      fires where it makes sense.
      --------------------------------------------------------------------- */
 

@@ -8,7 +8,7 @@ Swedish is the default language with an English toggle in the header.
 ```
 index.html               Home — hero background video slot
 tjanster.html            Services (8 detailed services + FAQ) — before/after slider
-kvalitet-sakerhet.html   Quality & safety (ISO 45001 focus)
+kvalitet-sakerhet.html   Quality & safety (Capitoline DCCS/DCSC focus)
 om-oss.html              About us — photo gallery + lightbox
 kontakt.html             Contact + quote form
 css/style.css            Design system + all components
@@ -103,10 +103,17 @@ These are stand-ins and must be updated with the real details:
 
 Search for `000 00 00` and `559XXX` to find them all quickly.
 
-Claims that should be verified against actual certification before publishing:
-ISO 45001, and the references to ISO 9001 / ISO 14001 on `kvalitet-sakerhet.html`
-(currently worded as *standards we work to*, not as held certificates — tighten or
-strengthen that wording depending on what CoreUp is actually certified for).
+Certification story (sourced from *CoreUp Sweden AB Quality plan draft.docx*, dated
+2026.08.26): staff hold Capitoline **DCCS** (Certified Data Centre Cleaning Specialist)
+certification; the company's **DCSC** (Data Centre Cleaning Specialist Company)
+certification application is in progress but not yet approved — the site must never
+say "DCSC certified" until Capitoline formally approves it. The remaining ISO 9001 /
+ISO 14001 references on `kvalitet-sakerhet.html` are worded as *standards we work to*,
+not held certificates, and aren't confirmed by that document — verify before tightening
+that wording. The source document also states CoreUp Sweden AB had not yet commenced
+cleaning operations as of its date — the gallery and before/after slider are worded as
+illustrative examples for that reason; update them to first-person "our work" framing
+once genuine completed jobs exist to document.
 
 ## Design
 

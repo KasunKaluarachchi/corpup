@@ -7,8 +7,8 @@
 
 :root {
   /* Neutrals */
-  --ink:        #0b1220;
-  --ink-soft:   #1a2434;
+  --ink:        #172f40;
+  --ink-soft:   #24455c;
   --body:       #47536420;
   --text:       #16202e;
   --text-muted: #5b6879;
@@ -16,13 +16,15 @@
   --line-soft:  #eef1f5;
   --bg:         #ffffff;
   --bg-alt:     #f7f9fb;
-  --bg-deep:    #0b1220;
+  --bg-deep:    #172f40;
 
-  /* Accent — cool technical teal */
-  --accent:      #00a3b5;
-  --accent-deep: #007e8c;
-  --accent-soft: #e5f6f8;
-  --accent-glow: rgba(0, 163, 181, 0.25);
+  /* Accent — brand colours sampled from logo.png:
+     blue from the CORE wordmark, green from the UP + sparkle. */
+  --accent:      #237da7;
+  --accent-deep: #1b6485;
+  --accent-soft: #e7f3f8;
+  --accent-glow: rgba(35, 125, 167, 0.25);
+  --accent2:     #5b9438;
 
   /* Typography */
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -221,15 +223,8 @@ button { font: inherit; color: inherit; }
   min-height: 74px;
 }
 
-.logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
-.logo__mark { width: 30px; height: 30px; color: var(--accent); }
-.logo__word {
-  font-size: 1.16rem;
-  font-weight: 680;
-  letter-spacing: 0.01em;
-  color: var(--text);
-}
-.logo__word span { color: var(--accent); }
+.logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.logo__img { display: block; height: 44px; width: auto; }
 
 .nav { margin-left: auto; }
 .nav__list {
@@ -538,8 +533,8 @@ a.card:hover .card__foot svg { transform: translateX(4px); }
   top: 0.42em;
   width: 12px;
   height: 7px;
-  border-left: 1.8px solid var(--accent);
-  border-bottom: 1.8px solid var(--accent);
+  border-left: 1.8px solid var(--accent2);
+  border-bottom: 1.8px solid var(--accent2);
   transform: rotate(-45deg);
 }
 .checks--2 { columns: 2; column-gap: 2rem; }
@@ -776,7 +771,6 @@ a.card:hover .card__foot svg { transform: translateX(4px); }
   border-bottom: 1px solid var(--line);
 }
 @media (min-width: 780px) { .footer-top { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; } }
-.site-footer .logo__word { color: var(--text); }
 .site-footer h4 {
   margin-bottom: 1rem;
   font-size: 0.75rem;
