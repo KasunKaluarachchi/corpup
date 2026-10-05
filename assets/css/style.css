@@ -1,0 +1,1629 @@
+/* ==========================================================================
+   Diginext Scandinavia — Main stylesheet
+
+   Contents
+    1. Design tokens
+    2. Base & reset
+    3. Layout & accessibility
+    4. Buttons
+    5. Header & navigation
+    6. Home hero
+    7. Feature strip
+    8. Sections & headings
+    9. Intro
+   10. Service cards
+   11. Visual cards
+   12. Process
+   13. Dark panel & checklist
+   14. Metrics
+   15. Inner page hero
+   16. Content, info & image cards
+   17. Method & steps
+   18. Vision & values
+   19. Contact & forms
+   20. Call to action
+   21. Footer
+   22. Animation utilities
+   23. Keyframes
+   24. Responsive: tablet (≤ 1100px)
+   25. Responsive: mobile (≤ 820px)
+   26. Responsive: small mobile (≤ 580px)
+   27. Accessibility: reduced motion
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Design tokens
+   Brand colours, shadows, radius and max content width.
+   ========================================================================== */
+
+:root {
+  --navy: #062746;
+  --navy2: #0b3155;
+  --ink: #0b2946;
+  --blue: #1685b2;
+  --green: #78b943;
+  --green2: #a8de6f;
+  --line: #dce6ed;
+  --muted: #647482;
+  --soft: #f4f8fb;
+  --white: #fff;
+  --shadow: 0 24px 70px rgba(6, 39, 70, 0.12);
+  --radius: 22px;
+  --max: 1280px;
+}
+
+/* ==========================================================================
+   2. Base & reset
+   Global box model, typography defaults, links and images.
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  background: var(--soft);
+  line-height: 1.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   3. Layout & accessibility
+   Page container and skip-to-content link.
+   ========================================================================== */
+
+.container {
+  width: min(var(--max), calc(100% - 44px));
+  margin: auto;
+}
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.skip:focus {
+  left: 20px;
+  top: 20px;
+  background: #fff;
+  padding: 10px 14px;
+  z-index: 999;
+}
+
+/* ==========================================================================
+   4. Buttons
+   Shared button styles (.btn, variants, header quote button).
+   ========================================================================== */
+
+.quote-btn,
+.btn.green {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green), var(--green2));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 13px 19px;
+  box-shadow: 0 10px 24px rgba(120, 185, 67, 0.26);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 900;
+}
+.btn.outline {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================================================================
+   5. Header & navigation
+   Sticky header, desktop nav, mobile menu.
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(6, 39, 70, 0.08);
+  backdrop-filter: blur(16px);
+}
+.nav {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.logo img {
+  width: 174px;
+  height: auto;
+}
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+.nav-links a {
+  padding: 31px 0 25px;
+  position: relative;
+}
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 18px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--green);
+  transition: 0.25s;
+}
+.nav-links a:hover:after,
+.nav-links a[aria-current="page"]:after {
+  right: 0;
+}
+.menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 19px;
+}
+.mobile-nav {
+  display: none;
+  border-top: 1px solid var(--line);
+  padding: 10px 22px 18px;
+}
+.mobile-nav a {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 800;
+}
+.mobile-nav.open {
+  display: block;
+}
+.mobile-nav .quote-btn {
+  margin-top: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   6. Home hero
+   Full-height hero, animated orb and stats bar.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  background: #061827;
+  overflow: hidden;
+  color: #fff;
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background-position: center right;
+  background-size: cover;
+  transform: scale(1.03);
+  animation: heroZoom 14s ease-in-out infinite alternate;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 18, 31, 0.95) 0%,
+    rgba(3, 18, 31, 0.78) 37%,
+    rgba(3, 18, 31, 0.36) 68%,
+    rgba(3, 18, 31, 0.14) 100%
+  );
+}
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+}
+.hero-copy {
+  max-width: 660px;
+  padding: 68px 0;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9ddd5c;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.eyebrow:before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #9ddd5c;
+  border-radius: 99px;
+}
+.hero h1 {
+  font-size: clamp(46px, 5.7vw, 82px);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  margin: 20px 0 23px;
+}
+.hero h1 span {
+  color: #91d450;
+}
+.hero p {
+  max-width: 620px;
+  margin: 0;
+  color: #e3edf2;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+.hero-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.hero-orb {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(120, 185, 67, 0.22),
+    rgba(16, 79, 118, 0.07) 45%,
+    transparent 65%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 70px rgba(120, 185, 67, 0.06);
+}
+.hero-orb:before,
+.hero-orb:after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(157, 220, 103, 0.22);
+  border-radius: 50%;
+  animation: spin 15s linear infinite;
+}
+.hero-orb:before {
+  inset: 28px;
+}
+.hero-orb:after {
+  inset: 70px;
+  animation-direction: reverse;
+  animation-duration: 10s;
+}
+.hero-orb img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 26px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+.hero-stats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(5, 25, 44, 0.88);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(8px);
+}
+.stat {
+  padding: 18px 22px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.stat:last-child {
+  border-right: 0;
+}
+.stat strong {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+}
+.stat span {
+  display: block;
+  margin-top: 2px;
+  color: #bcd0db;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   7. Feature strip
+   Overlapping feature bar below the hero.
+   ========================================================================== */
+
+.feature-strip {
+  position: relative;
+  z-index: 5;
+  margin-top: -36px;
+}
+.feature-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-right: 1px solid var(--line);
+}
+.feature:last-child {
+  border-right: 0;
+}
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #edf7e7;
+  color: var(--navy);
+  font-weight: 900;
+}
+.feature h4 {
+  font-size: 12px;
+  margin: 0;
+}
+.feature p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 3px 0 0;
+}
+
+/* ==========================================================================
+   8. Sections & headings
+   Section spacing, section heads, labels and h2.
+   ========================================================================== */
+
+.section {
+  padding: 105px 0;
+}
+.section.white {
+  background: #fff;
+}
+.section.dark {
+  background: var(--navy);
+  color: #fff;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.label {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+}
+h2 {
+  font-size: clamp(34px, 4.5vw, 60px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 11px 0 0;
+}
+h2 span {
+  color: var(--green);
+}
+.section-head p {
+  max-width: 470px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.72;
+  margin: 0;
+}
+.dark .section-head p {
+  color: #c7d7e0;
+}
+
+/* ==========================================================================
+   9. Intro
+   Intro copy with city image card.
+   ========================================================================== */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 40px;
+  align-items: stretch;
+}
+.intro-copy {
+  padding: 18px 0;
+}
+.intro-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+.intro-copy .btn {
+  margin-top: 16px;
+  background: var(--navy);
+  color: #fff;
+}
+.city-card {
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #11324c;
+}
+.city-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.city-card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(3, 24, 42, 0.8));
+}
+.city-caption {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  color: #fff;
+  background: rgba(6, 36, 61, 0.9);
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.city-caption small {
+  display: block;
+  font-size: 10px;
+  color: #9ddd5c;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.city-caption strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.05;
+  margin-top: 5px;
+}
+.city-caption span {
+  font-size: 11px;
+  color: #c9d8e2;
+}
+
+/* ==========================================================================
+   10. Service cards
+   Service grid with image cards.
+   ========================================================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 45px rgba(6, 39, 70, 0.06);
+  transition:
+    transform 0.35s,
+    box-shadow 0.35s;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+.service-card .media {
+  height: 190px;
+  overflow: hidden;
+  background: #102f4d;
+}
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.service-card:hover img {
+  transform: scale(1.05);
+}
+.service-body {
+  padding: 19px 20px 21px;
+}
+.service-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.service-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.service-body a {
+  display: inline-flex;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--navy);
+}
+.service-body a:after {
+  content: "→";
+  margin-left: 7px;
+  color: var(--green);
+}
+
+/* ==========================================================================
+   11. Visual cards
+   Two-column image cards with overlay text.
+   ========================================================================== */
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.visual-card {
+  position: relative;
+  min-height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0a2946;
+  box-shadow: var(--shadow);
+}
+.visual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.visual-card:hover img {
+  transform: scale(1.04);
+}
+.visual-card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 38%, rgba(4, 22, 37, 0.92));
+}
+.visual-content {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  color: #fff;
+}
+.visual-content .tag {
+  color: #9ddd5c;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.visual-content h3 {
+  margin: 5px 0 6px;
+  font-size: 22px;
+}
+.visual-content p {
+  margin: 0;
+  color: #cedce4;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   12. Process
+   Numbered four-step process band.
+   ========================================================================== */
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #113a61;
+}
+.process-item {
+  background: var(--navy);
+  padding: 30px 24px;
+  min-height: 220px;
+  border-right: 1px solid #1a496f;
+}
+.process-item:last-child {
+  border-right: 0;
+}
+.process-num {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1b547d;
+  color: #9ddd5c;
+  font-size: 11px;
+  font-weight: 900;
+}
+.process-item h3 {
+  margin: 18px 0 9px;
+  font-size: 20px;
+  color: #fff;
+}
+.process-item p {
+  margin: 0;
+  color: #c8d8e1;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   13. Dark panel & checklist
+   Gridded dark feature panel with check items.
+   ========================================================================== */
+
+.dark-panel {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 40px;
+  align-items: center;
+  background: linear-gradient(135deg, #062746, #0e3c62);
+  padding: 48px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+.dark-panel:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+.dark-copy {
+  position: relative;
+  z-index: 2;
+}
+.dark-copy h2 {
+  color: #fff;
+}
+.dark-copy p {
+  color: #cadbe4;
+  line-height: 1.7;
+}
+.check-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.check {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 13px;
+  color: #fff;
+}
+.check i {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #79b943;
+  color: #072746;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 900;
+  flex: 0 0 22px;
+}
+.check span {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #dbe8ee;
+}
+
+/* ==========================================================================
+   14. Metrics
+   Key figure cards.
+   ========================================================================== */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.metric {
+ /* background: #fff;*/
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.metric:after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: -44px;
+  top: -44px;
+  border-radius: 50%;
+  background: #edf6e7;
+}
+.metric strong {
+  font-size: 34px;
+  letter-spacing: -0.05em;
+}
+.metric span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   15. Inner page hero
+   Hero for sub-pages, breadcrumb and badge.
+   ========================================================================== */
+
+.page-hero {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  background: #062746;
+  color: #fff;
+}
+.page-hero-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.95);
+}
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 18, 31, 0.94),
+    rgba(3, 18, 31, 0.64) 46%,
+    rgba(3, 18, 31, 0.18)
+  );
+}
+.page-hero .container {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.page-hero-copy {
+  max-width: 760px;
+  padding: 70px 0;
+}
+.page-hero h1 {
+  font-size: clamp(44px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 15px 0 18px;
+}
+.page-hero p {
+  max-width: 700px;
+  font-size: 17px;
+  color: #deebf1;
+  line-height: 1.65;
+  margin: 0;
+}
+.crumb {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: #a9bfcb;
+  margin-bottom: 16px;
+}
+.crumb span {
+  color: #fff;
+}
+.page-hero-badge {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 22px;
+  align-items: center;
+  padding: 10px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   16. Content, info & image cards
+   Generic content blocks used on inner pages.
+   ========================================================================== */
+
+.content-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.content-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 14px 45px rgba(6, 39, 70, 0.05);
+}
+.content-card h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+.content-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.info-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 14px 45px rgba(6, 39, 70, 0.05);
+}
+.info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #edf7e7;
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+.info-card h3 {
+  margin: 17px 0 8px;
+  font-size: 18px;
+}
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.image-tile {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 45px rgba(6, 39, 70, 0.05);
+}
+.image-tile img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+.image-tile .copy {
+  padding: 17px 18px 20px;
+}
+.image-tile h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+.image-tile p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   17. Method & steps
+   Method visual with step cards.
+   ========================================================================== */
+
+.method {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.method-visual {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 380px;
+  background: #0a2743;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.method-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.method-visual:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(4, 24, 41, 0.5), transparent 70%);
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+.step-card {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 17px;
+  background: #fff;
+}
+.step-card b {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #edf7e7;
+  color: var(--navy);
+  font-size: 10px;
+}
+.step-card h4 {
+  margin: 11px 0 5px;
+  font-size: 14px;
+}
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   18. Vision & values
+   Vision cards and company values.
+   ========================================================================== */
+
+.vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.vision-card {
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eff7ea, #fff);
+  border: 1px solid #dbe7dd;
+}
+.vision-card .label {
+  margin-bottom: 6px;
+}
+.vision-card h3 {
+  margin: 0 0 9px;
+  font-size: 24px;
+}
+.vision-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.value-box {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+}
+.value-box strong {
+  display: block;
+  font-size: 16px;
+}
+.value-box span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   19. Contact & forms
+   Contact layout, form fields and contact details.
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 22px;
+}
+.form-card,
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field.full {
+  grid-column: 1/-1;
+}
+.field label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid #ccd8df;
+  background: #fbfdff;
+  border-radius: 10px;
+  padding: 12px 13px;
+  outline: none;
+  font: inherit;
+}
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #79b943;
+  box-shadow: 0 0 0 4px rgba(120, 185, 67, 0.12);
+}
+.contact-item {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-item:last-child {
+  border-bottom: 0;
+}
+.contact-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+}
+.contact-item strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+/* ==========================================================================
+   20. Call to action
+   CTA banner shown above the footer.
+   ========================================================================== */
+
+.cta {
+  padding: 30px 0 0;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 42px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eaf5e5, #f7fbfd);
+  border: 1px solid #dbe7de;
+}
+.cta-inner h2 {
+  font-size: clamp(28px, 4vw, 48px);
+}
+.cta-inner p {
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+/* ==========================================================================
+   21. Footer
+   Footer grid, links and copyright bar.
+   ========================================================================== */
+
+.footer {
+  padding: 56px 0 28px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr 0.9fr 0.8fr;
+  gap: 35px;
+}
+.footer-logo img {
+  width: 165px;
+}
+.footer p {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.footer h4 {
+  margin: 0 0 14px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.footer a {
+  display: block;
+  font-size: 12px;
+  margin: 8px 0;
+}
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 30px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   22. Animation utilities
+   Scroll reveal, float, shine, scan and page marker.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.delay-1 {
+  transition-delay: 0.08s;
+}
+.delay-2 {
+  transition-delay: 0.16s;
+}
+.delay-3 {
+  transition-delay: 0.24s;
+}
+.float {
+  animation: float 5.6s ease-in-out infinite;
+}
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+  transform: skewX(-18deg);
+  animation: shine 5.2s ease-in-out infinite;
+}
+.scan {
+  position: relative;
+  overflow: hidden;
+}
+.scan:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9ddd5c, transparent);
+  box-shadow: 0 0 20px rgba(157, 221, 92, 0.8);
+  animation: scan 4s ease-in-out infinite;
+}
+.page-marker {
+  position: absolute;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.page-marker span {
+  display: block;
+  width: 4px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.page-marker span.active {
+  background: #9ddd5c;
+  height: 46px;
+}
+
+/* ==========================================================================
+   23. Keyframes
+   ========================================================================== */
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+  45%,
+  100% {
+    left: 140%;
+  }
+}
+@keyframes scan {
+  0%,
+  100% {
+    top: 8%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 88%;
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   24. Responsive: tablet (≤ 1100px)
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .nav-links {
+    gap: 18px;
+  }
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature:nth-child(2n) {
+    border-right: 0;
+  }
+  .feature:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
+  }
+  .stats-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-side {
+    display: none;
+  }
+  .intro-grid,
+  .method,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .image-row,
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .values {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dark-panel {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   25. Responsive: mobile (≤ 820px)
+   ========================================================================== */
+
+@media (max-width: 820px) {
+  .nav {
+    height: 74px;
+  }
+  .logo img {
+    width: 152px;
+  }
+  .nav-links,
+  .nav > .quote-btn {
+    display: none;
+  }
+  .menu {
+    display: block;
+    margin-left: auto;
+  }
+  .hero,
+  .hero-grid {
+    min-height: 650px;
+  }
+  .hero-copy {
+    padding-top: 75px;
+    padding-bottom: 120px;
+  }
+  .hero h1 {
+    font-size: 54px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .feature-strip {
+    margin-top: -28px;
+  }
+  .feature-bar {
+    grid-template-columns: 1fr;
+  }
+  .feature {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line);
+  }
+  .feature:last-child {
+    border-bottom: 0;
+  }
+  .section {
+    padding: 82px 0;
+  }
+  .section-head {
+    display: block;
+  }
+  .section-head p {
+    margin-top: 18px;
+  }
+  .page-marker {
+    display: none;
+  }
+  .dark-panel {
+    padding: 34px;
+  }
+  .cta-inner {
+    display: block;
+  }
+  .cta-inner .btn {
+    margin-top: 20px;
+  }
+  .copyright {
+    display: block;
+  }
+  .copyright span {
+    display: block;
+    margin-top: 7px;
+  }
+}
+
+/* ==========================================================================
+   26. Responsive: small mobile (≤ 580px)
+   ========================================================================== */
+
+@media (max-width: 580px) {
+  .container {
+    width: min(var(--max), calc(100% - 28px));
+  }
+  .hero h1 {
+    font-size: 45px;
+  }
+  .hero {
+    min-height: 660px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .stats-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat {
+    padding: 15px 14px;
+  }
+  .stat strong {
+    font-size: 16px;
+  }
+  .service-grid,
+  .image-row,
+  .info-grid,
+  .vision,
+  .values,
+  .metrics,
+  .form-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .field.full {
+    grid-column: auto;
+  }
+  .section {
+    padding: 68px 0;
+  }
+  .page-hero,
+  .page-hero .container {
+    min-height: 360px;
+  }
+  .page-hero-copy {
+    padding: 58px 0;
+  }
+  .page-hero h1 {
+    font-size: 46px;
+  }
+  .visual-grid {
+    grid-template-columns: 1fr;
+  }
+  .process {
+    grid-template-columns: 1fr;
+  }
+  .process-item {
+    border-right: 0;
+    border-bottom: 1px solid #1a496f;
+  }
+  .process-item:last-child {
+    border-bottom: 0;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .dark-panel {
+    padding: 26px;
+  }
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-inner {
+    padding: 30px;
+  }
+  .form-card,
+  .contact-card {
+    padding: 22px;
+  }
+}
+
+/* ==========================================================================
+   27. Accessibility: reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
