@@ -975,6 +975,11 @@ h2 span {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+@media (min-width: 1101px) {
+  .image-row.four-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .image-tile {
   border: 1px solid var(--line);
   border-radius: 18px;
